@@ -30,11 +30,12 @@ mean_col <- function(x) {
 
 #Idem but with option to remove NAs, standardized to "yes, remove"
 mean_col <- function(x , removeNA = TRUE) {
-   num_col <- ncol(x)
-   means <- numeric(num_col)
-   for (i in 1:num_col) {
-     means[i] <- mean(x[,i], na.rm = removeNA)
-     
-   }
-   means
+  num_col <- ncol(x)
+  means <- numeric(num_col)
+  for (i in 1:num_col) {
+    means[i] <- mean(x[,i], na.rm = removeNA)
+    
+  }
+  means
 }
+
