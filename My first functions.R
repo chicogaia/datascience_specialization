@@ -22,13 +22,7 @@ above <- function(x, n =10) {
   x[use]
 }
 
-#Function that calculates and returns the means of each column in a matrix/df
-mean_col <- function(x) {
-  means <- summary(x)$mean
-  means
-}
-
-#Idem but with option to remove NAs, standardized to "yes, remove"
+#Function that returns the mean of each column in a df/matrix with option to remove NAs, standardized to "yes, remove"
 mean_col <- function(x , removeNA = TRUE) {
   num_col <- ncol(x)
   means <- numeric(num_col)
@@ -38,4 +32,3 @@ mean_col <- function(x , removeNA = TRUE) {
   }
   means
 }
-
