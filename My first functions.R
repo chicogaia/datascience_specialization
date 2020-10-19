@@ -28,7 +28,6 @@ mean_col <- function(x , removeNA = TRUE) {
   means <- numeric(num_col)
   for (i in 1:num_col) {
     means[i] <- mean(x[,i], na.rm = removeNA)
-    
   }
   means
 }
