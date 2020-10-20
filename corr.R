@@ -36,3 +36,19 @@ corr <- function(directory, threshold = 0) {
   }
   corrs
 }
+
+#Resposta certa
+corr <- function(directory, threshold) {
+  files <- dir(directory, full.names = TRUE)
+  corr.val <- c()
+  corr.op <- c()
+  for (i in 1:332) {
+    data <- read.csv(files[i])
+    comp.cases <- sum(complete.cases(data))
+    if(comp.cases > threshold) {
+      corr.val <- cor(data[,"sulfate"] , data[,"nitrate"] , use = "complete.obs")
+      corr.op <- c(corr.op,corr.val)
+    }
+  }
+  return(corr.op)
+}

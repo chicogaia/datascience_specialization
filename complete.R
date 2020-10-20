@@ -7,7 +7,7 @@ complete <- function(directory, id = 1:332){
   nfiles <- length(files.want)
   data.nobs <- data.frame()
   for (i in 1:nfiles) {
-    data.nobs <- rbind(data.nobs, data.frame("id" = id[i] , "nobs" = sum(complete.cases(read.csv(files.want[i])) == TRUE)))
+    data.nobs <- rbind(data.nobs, data.frame("id" = id[i] , "nobs" = sum(complete.cases(read.csv(files.want[i])))))
   }
   data.nobs
 }
